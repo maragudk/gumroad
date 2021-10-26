@@ -110,6 +110,46 @@ func (c *Client) GetResourceSubscriptions(ctx context.Context, name ResourceSubs
 	return &r, nil
 }
 
+// PingRequest sent from Gumroad to your API.
+type PingRequest struct {
+	SaleID                     string            `json:"sale_id"`
+	SaleTimestamp              string            `json:"sale_timestamp"`
+	OrderNumber                string            `json:"order_number"`
+	SellerID                   string            `json:"seller_id"`
+	ProductID                  string            `json:"product_id"`
+	ProductPermalink           string            `json:"product_permalink"`
+	ShortProductID             string            `json:"short_product_id"`
+	Email                      string            `json:"email"`
+	URLParams                  map[string]string `json:"url_params"`
+	FullName                   string            `json:"full_name"`
+	PurchaserID                string            `json:"purchaser_id"`
+	SubscriptionID             string            `json:"subscription_id"`
+	IPCountry                  string            `json:"ip_country"`
+	Price                      int               `json:"price"`
+	Recurrence                 string            `json:"recurrence"`
+	Variants                   map[string]string `json:"variants"`
+	OfferCode                  string            `json:"offer_code"`
+	Test                       bool              `json:"test"`
+	CustomFields               map[string]string `json:"custom_fields"`
+	ShippingInformation        map[string]string `json:"shipping_information"`
+	IsRecurringCharge          bool              `json:"is_recurring_charge"`
+	IsPreorderAuthorization    bool              `json:"is_preorder_authorization"`
+	LicenseKey                 string            `json:"license_key"`
+	Quantity                   int               `json:"quantity"`
+	ShippingRate               int               `json:"shipping_rate"`
+	Affiliate                  string            `json:"affiliate"`
+	AffiliateCreditAmountCents int               `json:"affiliate_credit_amount_cents"`
+	IsGiftReceiverPurchase     bool              `json:"is_gift_receiver_purchase"`
+	GifterEmail                string            `json:"gifter_email"`
+	GiftPrice                  int               `json:"gift_price"`
+	Refunded                   bool              `json:"refunded"`
+	DiscoverFeeCharge          bool              `json:"discover_fee_charge"`
+	CanContact                 bool              `json:"can_contact"`
+	Referrer                   string            `json:"referrer"`
+	GumroadFee                 int               `json:"gumroad_fee"`
+	Card                       string            `json:"card"`
+}
+
 func (c *Client) get(ctx context.Context, path string, args map[string]string, r interface{}) error {
 	values := url.Values{}
 	for k, v := range args {
