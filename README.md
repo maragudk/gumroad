@@ -13,6 +13,12 @@ Made in 🇩🇰 by [maragu](https://www.maragu.dk), maker of [online Go courses
 
 Get the library using `go get`:
 
-```shell script
+```shell
 go get -u github.com/maragudk/gumroad
+```
+
+Install the CLI `go install`:
+
+```shell
+go install github.com/maragudk/gumroad/cmd/gumroad@latest
 ```
