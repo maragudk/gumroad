@@ -17,7 +17,7 @@ Get the library using `go get`:
 go get -u github.com/maragudk/gumroad
 ```
 
-Install the CLI `go install`:
+Install the CLI with `go install`:
 
 ```shell
 go install github.com/maragudk/gumroad/cmd/gumroad@latest
